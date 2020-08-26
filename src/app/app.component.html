@@ -1,0 +1,33 @@
+<!-- <router-outlet></router-outlet> -->
+
+<!-- directiva estructural-->
+<div *ngIf="saludar">
+  <p>{{saludo}}</p>
+  <input type="radio" [disabled]="disabled">
+</div>
+<button (click)="changeSaludar()">
+  Saludar
+</button>
+
+<button (click)="disabled=false">
+  Activar
+</button>
+
+<!-- for -->
+<ul *ngIf="!disabled" >
+  <li *ngFor="let letra of array">
+    {{letra}}
+  </li>
+</ul>
+<br>
+<div>
+  <select [(ngModel)]="paisSeleccionado">
+    <option *ngFor="let pais of paises" [value]="pais.id"> {{pais.pais}}</option>
+  </select>
+  <div *ngIf="paisSeleccionado">
+    {{paisSeleccionado | json}}
+  </div>
+</div>
+<!-- fallo-->
+
+<app-master></app-master>
