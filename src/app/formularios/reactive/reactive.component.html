@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="user">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              class="form-control form-control-user"
+              formControlName="username"
+              [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+              />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password"
+              formControlName="password"
+              class="form-control form-control-user" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button
+                class="btn btn-primary btn-user btn-block"
+                [disabled]="!loginForm.valid">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                  Login
+            </button>
+            <hr>
+            <div class="text-center">
+                <a routerLink="/register" class="btn btn-link">Register</a>
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="col-6">
+      <b>Informacion del Formulario</b>
+      <ul>
+          <li>
+              values:  {{f.value | json}}
+          </li>
+          <li>
+              valid: <span [ngClass]="{'alert-success' : f.valid, 'alert-danger' : !f.valid}">{{f.valid}} </span>
+          </li>
+          <li>
+              submited: {{f.submitted}}
+          </li>
+          <li>
+              pristine: {{f.pristine}}
+          </li>
+          <li>
+              disty: {{f.dirty}}
+          </li>
+          <li>
+              touched: {{f.touched}}
+          </li>
+          <li>
+              error:  {{f.errors | json}}
+          </li>
+      </ul>
+  </div>
+  </div>
+</div>

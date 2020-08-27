@@ -1,6 +1,4 @@
-<!-- <router-outlet></router-outlet> -->
-
-<!-- directiva estructural-->
+<!--
 <div *ngIf="saludar">
   <p>{{saludo}}</p>
   <input type="radio" [disabled]="disabled">
@@ -13,7 +11,6 @@
   Activar
 </button>
 
-<!-- for -->
 <ul *ngIf="!disabled" >
   <li *ngFor="let letra of array">
     {{letra}}
@@ -28,6 +25,15 @@
     {{paisSeleccionado | json}}
   </div>
 </div>
+-->
 <!-- fallo-->
 
-<app-master></app-master>
+<!-- <app-master></app-master> -->
+
+<!-- <app-template-driverv2></app-template-driverv2> -->
+
+<!-- <app-reactive></app-reactive> -->
+<!-- <app-login></app-login> -->
+<!-- <app-register></app-register> -->
+<router-outlet></router-outlet>
+
