@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { InformacionCliente } from '../../model/informacion-cliente' ;
 import {ClienteDataService} from '../../services/cliente-data-service.service';
+import { AuthenticationService } from 'src/app/login/services/authentication.service';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +16,9 @@ export class HomeComponent implements OnInit {
   informacionCliente: InformacionCliente;
 
   constructor(
-    private clienteDataService: ClienteDataService
+    private clienteDataService: ClienteDataService,
+    private authenticationService: AuthenticationService,
+    private router: Router
   ) {
     this.clienteDataService.getInformacionCliente().subscribe(
       data => {
@@ -34,8 +39,9 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  public updateClientData() {
-
+  executeLogout(): void {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 
 }
