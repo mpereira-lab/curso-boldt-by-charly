@@ -14,7 +14,7 @@ import { ClienteService } from './services/cliente.service';
 import { ClienteDataService } from './services/cliente-data-service.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // import { ResolveService } from '../resolve.service';
-
+import { DashBoardRoutingModule } from './dashboard-routing.module';
 @NgModule({
   declarations: [
     ContactoComponent,
@@ -31,6 +31,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    DashBoardRoutingModule
   ],
   exports: [
     ContactoComponent,
