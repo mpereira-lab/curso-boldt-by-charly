@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { InformacionCliente } from './model/informacion-cliente';
+import { InformacionCliente } from '../model/informacion-cliente';
 import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable()
@@ -16,10 +15,9 @@ export class ClienteDataService {
 
   private currentInformacionCliente: Observable<InformacionCliente> = this.informacionClienteSubject.asObservable();
 
-  constructor(private httpClient: HttpClient) { }
+  constructor() { }
 
   public getInformacionCliente(): Observable<InformacionCliente> {
-    // return this.httpClient.get<InformacionCliente>('assets/datos.json');
     return this.currentInformacionCliente;
   }
 

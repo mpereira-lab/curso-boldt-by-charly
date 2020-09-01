@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PeticionesService} from '../peticiones.service';
-import { DatosService } from '../datos.service';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
-import { AlertService } from '../alert.service';
+import { PeticionesService } from '../../services/peticiones.service';
+import { DatosService } from '../../services/datos.service';
+import { ActivatedRoute } from '@angular/router';
+import { AlertService } from 'src/app/commons/services/alert.service';
 
 @Component({
   selector: 'app-contenedor',
