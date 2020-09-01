@@ -1,0 +1,13 @@
+<div class="container">
+  <app-alert></app-alert>
+  <div class="row">
+    <app-prueba></app-prueba>
+    <app-prueba2></app-prueba2>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Pagina: <input #page type="number">
+      <button (click)="findUserList( page.value )">Find user list</button>
+    </div>
+  </div>
+</div>
