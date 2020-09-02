@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { InformacionCliente } from '../../model/informacion-cliente' ;
 import {ClienteDataService} from '../../services/cliente-data-service.service';
 import { AuthenticationService } from 'src/app/login/services/authentication.service';
-import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
+declare function initJsFromTs(): any;
 
 @Component({
   selector: 'app-home',
@@ -37,6 +37,9 @@ export class HomeComponent implements OnInit {
         console.log(error);
       }
     );
+
+    // invoca una funcion llamda initJsFromTs() ubicada en el archivo init.js. Permite que funcione el menu laterar izquierdo.
+    initJsFromTs()
   }
 
   executeLogout(): void {
