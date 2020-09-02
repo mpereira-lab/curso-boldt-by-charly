@@ -9,6 +9,7 @@ import { DashboardModule} from './dashboard/dashboard.module';
 import { DashBoardRoutingModule } from './dashboard/dashboard-routing.module';
 import { LoginRoutingModule } from './login/login/login-routing.module';
 import { EjemplosRoutingModule } from './ejemplos/ejemplos-routing.module';
+import { BoldtCommonsModule } from './commons/commons.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +21,10 @@ import { EjemplosRoutingModule } from './ejemplos/ejemplos-routing.module';
     DashBoardRoutingModule,
     AppRoutingModule,
     HttpClientModule,
+    BoldtCommonsModule,
     LoginModule,
     PruebaModule,
-    DashboardModule
+    DashboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
